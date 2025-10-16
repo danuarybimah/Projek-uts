@@ -1,0 +1,381 @@
+/* Custom Properties untuk Fleksibilitas (Unik: Variabel dinamis) */
+:root {
+    --primary-blue: #5A9BD4;
+    --accent-mint: #A8D5BA;
+    --neutral-light: #F8FBFF;
+    --text-dark: #2C3E50;
+    --shadow-soft: 0 4px 15px rgba(90, 155, 212, 0.1);
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Base Reset dengan Twist */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background: linear-gradient(to bottom, var(--neutral-light), #E8F4FD);
+    overflow-x: hidden;
+}
+
+/* Header dengan Radial Gradient Unik */
+.header-main {
+    background: radial-gradient(circle at 30% 20%, var(--primary-blue), var(--accent-mint));
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-main::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -50%;
+    width: 100%; height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100px); }
+}
+
+.header-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Nav dengan Underline Slide */
+.nav-bar ul {
+    list-style: none;
+    background: rgba(255,255,255,0.95);
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(10px);
+}
+
+.nav-bar li {
+    margin: 0 1.5rem;
+}
+
+.nav-bar a {
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.nav-bar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    width: 0; height: 2px;
+    background: var(--primary-blue);
+    transition: var(--transition-smooth);
+    transform: translateX(-50%);
+}
+
+.nav-bar a:hover::after, .nav-bar a.active::after {
+    width: 100%;
+}
+
+.nav-bar a:hover, .nav-bar a.active {
+    color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+/* Main Content */
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.produk-section h2, .kasir-section h2, .about-section h2, .saran-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-blue);
+    font-size: 2rem;
+    position: relative;
+}
+
+.produk-section h2::after {
+    content: '';
+    display: block;
+    width: 50px; height: 3px;
+    background: var(--accent-mint);
+    margin: 0.5rem auto;
+    border-radius: 2px;
+}
+
+/* About Section (Fixed Layout) */
+.about-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-section p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    text-align: left;  /* Left align untuk paragraf panjang */
+}
+
+.about-visual {
+    margin: 1.5rem 0;
+}
+
+.about-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: var(--shadow-soft);
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+.contact-note {
+    font-style: italic;
+    color: #666;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Saran Section & Form (Fixed & Rapi) */
+.saran-section {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.saran-section h2 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.saran-section p {
+    color: #666;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.saran-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: var(--shadow-soft);
+    max-width: 600px;
+    margin: 0 auto;
+    transition: var(--transition-smooth);
+}
+
+.saran-form:hover {
+    box-shadow: 0 6px 20px rgba(90, 155, 212, 0.15);
+}
+
+.saran-form label {
+    display: block;
+    margin: 1rem 0 0.3rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    text-align: left;
+}
+
+.saran-form input, .saran-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 2px solid #E0E8F0;
+    border-radius: 10px;
+    transition: var(--transition-smooth);
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.saran-form input:focus, .saran-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(90, 155, 212, 0.1);
+}
+
+.saran-form textarea {
+    resize: vertical;  /* User bisa resize vertikal saja */
+    min-height: 100px;
+}
+
+.saran-form button {
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-mint));
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.saran-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(90, 155, 212, 0.3);
+}
+
+/* Grid Produk dengan Staggered Animation (untuk index.html) */
+.produk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.produk-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    transition: var(--transition-smooth);
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+    animation-delay: var(--delay, 0s);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.produk-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(90, 155, 212, 0.2);
+}
+
+/* Styling Gambar Produk (Lokal dari images/) */
+.produk-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 0 auto 1rem;
+    display: block;
+    box-shadow: 0 2px 8px rgba(90, 155, 212, 0.15);
+    transition: var(--transition-smooth);
+}
+
+.produk-card:hover .produk-img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(168, 213, 186, 0.3);
+}
+
+.produk-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.produk-card p {
+    font-weight: 500;
+    color: #666;
+}
+
+/* Kasir Form dengan Curved Design (untuk index.html) */
+.kasir-section {
+    margin-top: 3rem;
+}
+
+.kasir-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 2rem;
+    transition: var(--transition-smooth);
+}
+
+.kasir-form:hover {
+    box-shadow: 0 6px 20px rgba(90, 155, 212, 0.15);
+}
+
+.kasir-form label {
+    display: block;
+    margin: 1rem 0 0.3rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.kasir-form input, .kasir-form select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 2px solid #E0E8F0;
+    border-radius: 10px;
+    transition: var(--transition-smooth);
+    font-size: 1rem;
+}
+
+.kasir-form input:focus, .kasir-form select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(90, 155, 212, 0.1);
+}
+
+.kasir-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+.kasir-form select:hover {
+    border-color: var(--accent-mint);
+}
+
+.kasir-form input[readonly] {
+    background: #F8FBFF;
+    color: var(--primary-blue);
+    font-weight: 500;
+    cursor: not-allowed;
+    border-color: #A8D5BA;
+}
+
+.kasir-form input[readonly]:focus {
+    box-shadow: none;
+}
+
+.kasir-form button {
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-mint));
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}

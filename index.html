@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Alat Kesehatan Sehatku - Kasir</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header-main">
+        <div class="header-content">
+            <h1>Toko Alat Kesehatan Sehatku</h1>
+            <p>Dari hati untuk kesehatan Anda. Kami sediakan alat medis berkualitas dengan kasir yang ramah dan cepat, seperti obrolan santai di apotek langganan.</p>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="index.html" class="active">Beranda</a></li>
+            <li><a href="about.html">Tentang Kami</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="produk-section">
+            <h2>Produk Unggulan Kami</h2>
+            <div class="produk-grid">
+                <div class="produk-card" style="--delay: 0.1s;">
+                    <img class="produk-img" src="masker.jpg" alt="Box Masker Medis (50 pcs) - Perlindungan wajah berkualitas" onerror="this.src='https://via.placeholder.com/120x120/5A9BD4/A8D5BA?text=Masker'; this.alt='Gambar Masker Tidak Tersedia'">
+                    <h3>Masker Medis (Box 50)</h3>
+                    <p>Rp 25.000 – Lindungi diri dengan nyaman.</p>
+                </div>
+                <div class="produk-card" style="--delay: 0.2s;">
+                    <img class="produk-img" src="termometer.jpg" alt="Termometer Digital - Alat ukur suhu akurat dan cepat" onerror="this.src='https://via.placeholder.com/120x120/5A9BD4/A8D5BA?text=Termometer'; this.alt='Gambar Termometer Tidak Tersedia'">
+                    <h3>Termometer Digital</h3>
+                    <p>Rp 75.000 – Akurat dan cepat ukur suhu.</p>
+                </div>
+                <div class="produk-card" style="--delay: 0.3s;">
+                    <img class="produk-img" src="paracetamol.jpg" alt="Strip Obat Paracetamol (10 pcs) - Obat demam dan sakit kepala" onerror="this.src='https://via.placeholder.com/120x120/5A9BD4/A8D5BA?text=Paracetamol'; this.alt='Gambar Paracetamol Tidak Tersedia'">
+                    <h3>Obat Paracetamol (10 Strip)</h3>
+                    <p>Rp 15.000 – Redakan demam dengan aman.</p>
+                </div>
+                <div class="produk-card" style="--delay: 0.4s;">
+                    <img class="produk-img" src="perban.jpg" alt="Pack Perban Steril (5 pcs) - Untuk perawatan luka kecil" onerror="this.src='https://via.placeholder.com/120x120/5A9BD4/A8D5BA?text=Perban'; this.alt='Gambar Perban Tidak Tersedia'">
+                    <h3>Perban Steril (Pack 5)</h3>
+                    <p>Rp 10.000 – Siap tangani luka kecil.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="kasir-section">
+            <h2>Panel Kasir Harian</h2>
+            <form id="formKasir" class="kasir-form">
+                <label for="itemSelect">Pilih Item Kesehatan:</label>
+                <select id="itemSelect" required>
+                    <option value="">-- Pilih dari daftar unggulan --</option>
+                    <option value="masker">Masker Medis (Box 50) - Rp 25.000</option>
+                    <option value="termometer">Termometer Digital - Rp 75.000</option>
+                    <option value="paracetamol">Obat Paracetamol (10 Strip) - Rp 15.000</option>
+                    <option value="perban">Perban Steril (Pack 5) - Rp 10.000</option>
+                </select>
+
+                <label for="namaItem">Nama Item (Otomatis):</label>
+                <input type="text" id="namaItem" readonly placeholder="Pilih item dulu untuk muncul">
+
+                <label for="harga">Harga Satuan (Rp, Otomatis):</label>
+                <input type="text" id="harga" readonly placeholder="Harga akan muncul otomatis">
+
+                <label for="qty">Kuantitas:</label>
+                <input type="number" id="qty" min="1" value="1" required>
+
+                <button type="submit">Tambahkan ke Daftar</button>
+            </form>
+
+            <div id="keranjang" class="keranjang-box">
+                <h3>Daftar Pembelian</h3>
+                <ul id="daftarItem" class="daftar-ul"></ul>
+                <div class="total-bar">
+                    <p>Total Belanja: Rp <span id="total">0</span></p>
+                    <button id="clearBtn">Reset Daftar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-custom">
+        <p>&copy; 2025 Toko Sehatku. Kesehatan adalah prioritas – hubungi kami kapan saja.</p>
+        <div class="wave"></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

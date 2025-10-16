@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Toko Alat Kesehatan Sehatku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header-main">
+        <div class="header-content">
+            <h1>Toko Alat Kesehatan Sehatku</h1>
+            <p>Dari hati untuk kesehatan Anda. Kami sediakan alat medis berkualitas dengan kasir yang ramah dan cepat, seperti obrolan santai di apotek langganan.</p>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="about.html" class="active">Tentang Kami</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="about-section">
+            <h2>Kisah Kami</h2>
+            <p>Didirikan pada 2015 oleh seorang perawat pensiunan, Toko Sehatku lahir dari pengalaman nyata di ruang rawat. Kami bukan sekadar toko; kami teman yang siap bantu keluarga Anda tetap sehat. Dari masker hingga obat harian, semuanya dipilih dengan teliti untuk kualitas terbaik tanpa harga selangit.</p>
+            <div class="about-visual">
+                <img src="apotek.jpg"  class="about-img">
+                <p class="contact-note">Kunjungi kami di Jl. Kesehatan No. 1927 |  Tel: 0821352351690 | Email: tokosehat@gmail.com</p>
+            </div>
+        </section>
+
+        <section class="saran-section">
+            <h2>Kirim Saran Anda</h2>
+            <p>Beri masukan untuk layanan kami yang lebih baik. Saran Anda berharga!</p>
+            <form id="formSaran" class="saran-form">
+                <label for="namaSaran">Nama Lengkap:</label>
+                <input type="text" id="namaSaran" placeholder="Masukkan nama Anda" required>
+
+                <label for="emailSaran">Email:</label>
+                <input type="email" id="emailSaran" placeholder="Masukkan email aktif" required>
+
+                <label for="pesanSaran">Pesan Saran:</label>
+                <textarea id="pesanSaran" rows="5" placeholder="Tuliskan saran atau pertanyaan Anda..." required></textarea>
+
+                <button type="submit">Kirim Saran</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer-custom">
+        <p>&copy; 2025 Toko Sehatku. Kesehatan adalah prioritas – hubungi kami kapan saja.</p>
+        <div class="wave"></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
